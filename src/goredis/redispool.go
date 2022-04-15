@@ -22,15 +22,16 @@ func RedisPool() {
 	c := pool.Get()
 	// 创建完连接一定要关闭
 	c.Close()
+	fmt.Println("c")
 
-	_, err := c.Do("set", "job", "golang")
+	_, err := c.Do("hset", "user", "name", "hsuehly")
 	if err != nil {
 		println("set 失败", err)
 		return
 	}
 	// 通过go 向redis 读取数据 返回的是一个interface{} 打印是byte切片
 	//redis.Strings() 多个类型加s
-	r1, err := redis.String(c.Do("get", "job"))
+	r1, err := redis.String(c.Do("hset", "100"))
 	if err != nil {
 		fmt.Println("获取失败", err)
 	}

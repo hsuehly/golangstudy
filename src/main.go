@@ -1,8 +1,6 @@
 package main
 
-import (
-	"main/goredis"
-)
+import "main/goredis"
 
 //func init() {
 //	fmt.Println("我先执行0")
@@ -147,7 +145,7 @@ func main() {
 	// net
 	//service.Server()
 	// go 连接reids
-	//goredis.Redis()
+	goredis.Redis()
 	// go redis 连接池
-	goredis.RedisPool()
+	//goredis.RedisPool()
 }
